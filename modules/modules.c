@@ -16,38 +16,7 @@ char *notes[] = {
 
 int notesLength = sizeof(notes) / sizeof(notes[0]);
 
-struct tuningString
-{
-  char string;
-  struct tuningString *next;
-};
 
-typedef struct tuningString *t_node; //alias for tuning struct
-
-int stringLength(t_node topString)
-{
-  int count = 0;
-  if (topString != NULL)
-  {
-    t_node cursor = topString;
-    while (cursor->next != NULL)
-    {
-      count += 1;
-      cursor = cursor->next;
-    }
-  }
-  return count;
-}
-
-char *tuning[] = {
-    "E",
-    "B",
-    "G",
-    "D",
-    "A",
-    "E"};
-
-int tuningLength = sizeof(tuning) / sizeof(tuning[0]);
 
 int modMath(int base)
 {
