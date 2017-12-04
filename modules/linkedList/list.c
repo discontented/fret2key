@@ -1,84 +1,64 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+struct linkedList
+{
+    char *data[2];
+    struct linkedList *next;
+};
+
+typedef struct linkedList node;
+
+void printList(node *head)
+{
+    node *current = head;
+
+    while (current != NULL)
+    {
+        printf("%s\n", current->data);
+        current = current->next;
+    }
+}
+
 int main(void)
 {
-    struct tuningString
-    {
-        char string;
-        struct tuningString *next;
-    };
 
-    int stringLength(struct tuningString * topString)
-    {
-        int count = 0;
-        if (topString != NULL)
-        {
-            struct tuningString *cursor = topString;
-            while (cursor->next != NULL)
-            {
-                count += 1;
-                cursor = cursor->next;
-            }
-        }
-        return count;
-    }
+    node *tuning = malloc(sizeof(node));
 
-    struct tuningString *tuning = NULL;
-
-    void insertAfter(struct tuningString * node, char data)
-    {
-        node->next = malloc(sizeof(struct tuningString));
-        node->next->string = data;
-    }
-
-    tuning = malloc(sizeof(struct tuningString));
-    tuning->string = 'E';
-
-    struct tuningString *cursor = malloc(sizeof(struct tuningString));
+    node *cursor = malloc(sizeof(node));
 
     cursor = tuning;
 
-    // while (stringKey != 'X')
-    // {
-    //     puts("Input next string: ");
-    //     scanf("%c", &stringKey);
-        
-    // }
+    int stringLength = 6; //default string length
 
-    while(cursor != NULL) {
-        char *newString;
-        puts("Input next string: ");
-        fgets(newString, sizeof newString, stdin);
+    printf("Number of strings: ");
 
-        if(newString != "X") {
-            cursor->string = *newString;
-            cursor->next = malloc(sizeof(struct tuningString));
+    scanf("%d", &stringLength);
+
+    int i = 1;
+
+    for (i = 1; i <= stringLength; i++)
+    {
+        printf("String %d:", i);
+        scanf(" %s", &cursor->data);
+
+        if (i != stringLength)
+        {
+            cursor->next = malloc(sizeof(node));
             cursor = cursor->next;
-        } else {
-            cursor->next = NULL;
         }
     }
 
-    // void print_list(struct tuningString * head)
-    // {
-    //     struct tuningString *current = head;
+    printList(tuning);
 
-    //     while (current != NULL)
-    //     {
-    //         printf("%c\n", current->string);
-    //         current = current->next;
-    //     }
-    // }
+    // printf("%c\n", tuning->data);
+    // printf("%c\n", tuning->next->data);
 
-    printf("%c\n", tuning->string);
-    printf("%c\n", tuning->next->string);
+    // printf("%c\n", cursor->string);
+    // cursor = cursor->next;
+    // printf("%c\n", cursor->string);
 
-    printf("%c\n", cursor->string);
-    cursor = cursor->next;
-    printf("%c\n", cursor->string);
-
-    // print_list(tuning);
+    // printList(tuning);
 
     // tuning->next->string = 'A';
     // tuning->next->next->string = 'D';
