@@ -7,6 +7,7 @@ The main menu gives 5 options:
 2. Change Number of Frets - Input number of frets on your guitar.
 3. Set Key - Input the root key of scales.
 4. Display Scales - Choose which of seven diatonic scales to display.  Each scale's root is the note inputed under the Set Key option.
+E - Exits the program.
 
 ## Limitations
 - Only displays naturals and sharps.  Scales including flats will not be theoretically accurate.
