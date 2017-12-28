@@ -1,8 +1,5 @@
 # File Descriptions
 
-## main.c
-
-
 ## menu -> menu.c
 Contains all menu options as well as function for display and input.
 
@@ -30,12 +27,15 @@ Number of frets to be used when displaying fretboard.
 Choice for menus.
 
 `void displayMenu(char *items[], int length)`
+
 Displays menu based on array of menu prompts `*items[]`.
 
 `void prompt()`
+
 Stores user input into `choice[]`
 
 `void inputNeckSize()`
+
 Prompts for amount of frets on guitar and stores in `neckSize`
 
 ## modules
@@ -179,15 +179,4 @@ Creates all 7 heptatonic modes in pointer array based off of ionian mode.
 ## alpha -> modules -> modulesAlpha.h
 Contains all deployable modules.
 neckHeader - displays neck numbers based on fretLength.
-
-# Variables
-## modules
-
-
-
-
-`void neckHeader(int fretLength)`
-
-`void drawFretboard(int stringNumber, int neckSize, char *tuning[])`
-
 
