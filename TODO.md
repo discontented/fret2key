@@ -7,6 +7,7 @@
 - [x] User input for number of frets.
 - [ ] User input for number of strings.
 - [ ] User defined tuning.
+- [ ] Generate chords based on position within scale.
 
 - [x] Convert strings to variable length by a linked list.
 - [ ] Change references to original tuning array to linked list implementation.
