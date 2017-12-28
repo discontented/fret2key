@@ -1,13 +1,49 @@
+# File Descriptions
+
 ## main.c
 Since certain variables of variables have to be declared locally, all variables should be declared here.
-
-## menu
-
 
 ## menu -> menu.c
 Contains all menu options as well as function for display and input.
 
+# Functions and Variables
+
 ## modules
+`char *notes[]`
+String representations of notes program will use.  Notes are determined by position within this array and could be though of as the chromatic scale in C.  Index 0 of the array is 'C' and ends with index 11 as 'B'
+
+`int notesLength`
+
+    Calculates total number of notes in notes[].  Set to 12 for 12-TET system.
+
+`char *tuning[]`
+
+    Array containing notes for the tuning of the guitar.
+
+`int tuningLength`
+Number of strings.
+
+
+
+`int *ptrArrayOffset(int *srcArray[], int *targetArray[], int arrayLength, size_t offset)`
+
+`int numericPositionRoot(char *root)`
+
+`int convertNoteInt(char *noteArray[], char stringNote[], int arrayLength)`
+Converts a note to its integer value.  Takes string version of note as `stringNote[]` and returns the index within `*noteArray[]` if note is found.
+
+`char *convertNoteStr(char *noteArray[], int noteInt, int arrayLength)`
+Converts an integer representation of a note to its string representation.  Takes integer value as `noteInt`.  The integer value is the index of the note within `*notes[]`.  Returns the string representation of a note.
+
+`int calcNoteInt(char *noteArray[], int baseNote, int addNote, int arrayLength)`
+
+`char *calcNoteStr(char *noteArray[], char baseString[], char addString[], int arrayLength)`
+
+`char *calcNote(char *noteArray[], char baseString[], int addInt, int arrayLength)`
+Adds a number of positions as `addInt` to the note `baseString[]`.
+<br>`arrayLength`
+
+
 `int modMath(int base)`
 
 Checks that the integer representing a note is less than or equal to notesLength, or the number of notes within the default chromatic scale.
@@ -93,39 +129,7 @@ neckHeader - displays neck numbers based on fretLength.
 
 # Variables
 ## modules
-`char *notes[]`
-String representations of notes program will use.  Notes are determined by position within this array and could be though of as the chromatic scale in C.  Index 0 of the array is 'C' and ends with index 11 as 'B'
 
-`int notesLength`
-Calculates total number of notes in notes[].  Set to 12 for 12-TET system.
-
-`char *tuning[]`
-Array containing notes for the tuning of the guitar.
-
-`int tuningLength`
-Number of strings.
-
-# Functions and Variables
-## modules
-
-
-`int *ptrArrayOffset(int *srcArray[], int *targetArray[], int arrayLength, size_t offset)`
-
-`int numericPositionRoot(char *root)`
-
-`int convertNoteInt(char *noteArray[], char stringNote[], int arrayLength)`
-Converts a note to its integer value.  Takes string version of note as `stringNote[]` and returns the index within `*noteArray[]` if note is found.
-
-`char *convertNoteStr(char *noteArray[], int noteInt, int arrayLength)`
-Converts an integer representation of a note to its string representation.  Takes integer value as `noteInt`.  The integer value is the index of the note within `*notes[]`.  Returns the string representation of a note.
-
-`int calcNoteInt(char *noteArray[], int baseNote, int addNote, int arrayLength)`
-
-`char *calcNoteStr(char *noteArray[], char baseString[], char addString[], int arrayLength)`
-
-`char *calcNote(char *noteArray[], char baseString[], int addInt, int arrayLength)`
-Adds a number of positions as `addInt` to the note `baseString[]`.
-<br>`arrayLength`
 
 `int noteDifference(char tonic[], char compareNote[])`
 
