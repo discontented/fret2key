@@ -1,52 +1,105 @@
 # File Descriptions
 
 ## main.c
-Since certain variables of variables have to be declared locally, all variables should be declared here.
+
 
 ## menu -> menu.c
 Contains all menu options as well as function for display and input.
 
 # Functions and Variables
+## main
+`void changeIntervals(char *notesArray[], char tuningRoot[], int notesLength)`
+
+Changes all interval values based on the root `tuningRoot[]`.
+
+## menu
+`char *menuItems[]`
+
+Menu options.
+
+`char *modesMenu[]`
+
+List of available modes as scales which are stored in main.c
+
+`int neckSize`
+
+Number of frets to be used when displaying fretboard.
+
+`char choice[1]`
+
+Choice for menus.
+
+`void displayMenu(char *items[], int length)`
+Displays menu based on array of menu prompts `*items[]`.
+
+`void prompt()`
+Stores user input into `choice[]`
+
+`void inputNeckSize()`
+Prompts for amount of frets on guitar and stores in `neckSize`
 
 ## modules
+
 `char *notes[]`
+
 String representations of notes program will use.  Notes are determined by position within this array and could be though of as the chromatic scale in C.  Index 0 of the array is 'C' and ends with index 11 as 'B'
 
 `int notesLength`
 
-    Calculates total number of notes in notes[].  Set to 12 for 12-TET system.
+Calculates total number of notes in notes[].  Set to 12 for 12-TET system.
 
 `char *tuning[]`
 
-    Array containing notes for the tuning of the guitar.
+Array containing notes for the tuning of the guitar.
 
 `int tuningLength`
+
 Number of strings.
 
+`int modMath(int base)`
 
+Checks that the integer representing a note is less than or equal to notesLength, or the number of notes within the default chromatic scale.
 
 `int *ptrArrayOffset(int *srcArray[], int *targetArray[], int arrayLength, size_t offset)`
 
-`int numericPositionRoot(char *root)`
+`int numericPositionNote(char *note)`
+
+Returns integer value of a note.
 
 `int convertNoteInt(char *noteArray[], char stringNote[], int arrayLength)`
+
 Converts a note to its integer value.  Takes string version of note as `stringNote[]` and returns the index within `*noteArray[]` if note is found.
 
 `char *convertNoteStr(char *noteArray[], int noteInt, int arrayLength)`
-Converts an integer representation of a note to its string representation.  Takes integer value as `noteInt`.  The integer value is the index of the note within `*notes[]`.  Returns the string representation of a note.
+
+Converts an integer representation of a note to its string representation.  Takes integer value as `noteInt`.  The integer value is the index of the note within `*noteArray[]`.  Returns the string representation of a note.
 
 `int calcNoteInt(char *noteArray[], int baseNote, int addNote, int arrayLength)`
 
 `char *calcNoteStr(char *noteArray[], char baseString[], char addString[], int arrayLength)`
 
 `char *calcNote(char *noteArray[], char baseString[], int addInt, int arrayLength)`
-Adds a number of positions as `addInt` to the note `baseString[]`.
-<br>`arrayLength`
+
+Adds a number of positions as `addInt` to the note `baseString[]`.  Returns the string representation of the new note. `arrayLength` is the length of the `*noteArray[]`.
+
+`void strReplace(char str[], char replace[], int offset)`
+
+Replaces a string with another but does not affect the length of the original string.  `offset` can be used for formatting of where the new string will begin.  Used for placing notes on blank frets.
+
+`void printStrings(char *noteArray[], char *tuning[], int notesLength, int tuningLength, int fretLength)`
+
+Prints all notes of frets based on the tuning and number of frets.
 
 
-`int modMath(int base)`
+`void printScaleString(char *notesArray[], char tuningRoot[], int *scale[], int scaleLength, int notesLength, int fretLength)`
 
-Checks that the integer representing a note is less than or equal to notesLength, or the number of notes within the default chromatic scale.
+Prints all notes on frets based on scale, tuning, and number of frets.
+
+
+
+`void neckHeader(int fretLength)`
+
+Prints the fret numbers.
 
 # Old Code
 The ideas behind this code needs to be updated and implemented into the existing functional version.  The code is stored for reference.
@@ -131,17 +184,7 @@ neckHeader - displays neck numbers based on fretLength.
 ## modules
 
 
-`int noteDifference(char tonic[], char compareNote[])`
 
-`char *determineInterval(char tonic[], char compareNote[])`
-
-`void strReplace(char str[], char replace[], int offset)`
-
-`void printStrings(char *noteArray[], char *tuning[], int notesLength, int tuningLength, int fretLength)`
-
-`void printScaleString(char *notesArray[], char tuningRoot[], int *scale[], int scaleLength, int notesLength, int fretLength)`
-
-`void changeIntervals(char *notesArray[], char tuningRoot[], int notesLength)`
 
 `void neckHeader(int fretLength)`
 
