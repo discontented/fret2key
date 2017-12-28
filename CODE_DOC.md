@@ -1,11 +1,22 @@
-## menu -> welcome.c
-Contains welcome function which will display logo of project.
+## main.c
+Since certain variables of variables have to be declared locally, all variables should be declared here.
+
+## menu
+
 
 ## menu -> menu.c
 Contains all menu options as well as function for display and input.
 
+## modules
+`int modMath(int base)`
+
+Checks that the integer representing a note is less than or equal to notesLength, or the number of notes within the default chromatic scale.
+
 # Old Code
 The ideas behind this code needs to be updated and implemented into the existing functional version.  The code is stored for reference.
+
+## menu -> welcome.c
+Contains welcome function which will display logo of project.
 
 ## theory -> chordsOld.c
 Contains main function
@@ -15,8 +26,7 @@ Creates chords through intervals
 Attempts to make program more abstract by defining variables as constants.
 Creates chords through variables which contain intervals from root.
 
-## main.c
-Since certain variables of variables have to be declared locally, all variables should be declared here.
+
 
 ## core -> draw.c
 Contains drawFretboard() function.
@@ -97,8 +107,7 @@ Number of strings.
 
 # Functions and Variables
 ## modules
-`int modMath(int base); - printIntervalsFunc.c`
-Checks that the integer representing a note is less than or equal to notesLength, or the number of notes within the default chromatic scale.
+
 
 `int *ptrArrayOffset(int *srcArray[], int *targetArray[], int arrayLength, size_t offset)`
 
@@ -126,11 +135,11 @@ Adds a number of positions as `addInt` to the note `baseString[]`.
 
 `void printStrings(char *noteArray[], char *tuning[], int notesLength, int tuningLength, int fretLength)`
 
-`void neckHeader(int fretLength)`
-
 `void printScaleString(char *notesArray[], char tuningRoot[], int *scale[], int scaleLength, int notesLength, int fretLength)`
 
 `void changeIntervals(char *notesArray[], char tuningRoot[], int notesLength)`
+
+`void neckHeader(int fretLength)`
 
 `void drawFretboard(int stringNumber, int neckSize, char *tuning[])`
 
