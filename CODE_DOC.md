@@ -4,6 +4,9 @@ Contains welcome function which will display logo of project.
 ## menu -> menu.c
 Contains all menu options as well as function for display and input.
 
+# Old Code
+The ideas behind this code needs to be updated and implemented into the existing functional version.  The code is stored for reference.
+
 ## theory -> chordsOld.c
 Contains main function
 Creates chords through intervals
@@ -78,35 +81,57 @@ Creates all 7 heptatonic modes in pointer array based off of ionian mode.
 Contains all deployable modules.
 neckHeader - displays neck numbers based on fretLength.
 
-# Functions
-`int numericPositionRoot(char *root); - notePosition.c ADDED TO modules.c`
+# Variables
+## modules
+`char *notes[]`
+String representations of notes program will use.  Notes are determined by position within this array and could be though of as the chromatic scale in C.  Index 0 of the array is 'C' and ends with index 11 as 'B'
 
-`void drawFretboard(int stringNumber, int neckSize, char *tuning[]); - draw.c`
+`int notesLength`
+Calculates total number of notes in notes[].  Set to 12 for 12-TET system.
 
-`int convertNoteInt(char *noteArray[], char stringNote[], int arrayLength); - newModules.c`
+`char *tuning[]`
+Array containing notes for the tuning of the guitar.
 
-`char *convertNoteStr(char *noteArray[], int noteInt, int arrayLength); - newModules.c`
+`int tuningLength`
+Number of strings.
 
-`int calcNoteInt(char *noteArray[], int baseNote, int addNote, int arrayLength); - newModules.c`
-
-`char *calcNoteStr(char *noteArray[], char baseString[], char addString[], int arrayLength); - newModules.c`
-
-`char *calcNote(char *noteArray[], char baseString[], int addInt, int arrayLength); - newModules.c`
-
-`int noteDifference(char tonic[], char compareNote[]); - determineInterval.c`
-
-`char *determineInterval(char tonic[], char compareNote[]); - determineInterval.c`
-
-`void strReplace(char str[], char replace[], int offset) - fillFret.c`
-
-`void printStrings(char *noteArray[], char *tuning[], int notesLength, int tuningLength, int fretLength); - printStringFunc`
-
-`void neckHeader(int fretLength); - modulesAlpha.c`
-
+# Functions and Variables
+## modules
 `int modMath(int base); - printIntervalsFunc.c`
+Checks that the integer representing a note is less than or equal to notesLength, or the number of notes within the default chromatic scale.
 
-`void printScaleString(char *notesArray[], char tuningRoot[], int *scale[], int scaleLength, int notesLength, int fretLength) - printIntervalsFunc.c`
+`int *ptrArrayOffset(int *srcArray[], int *targetArray[], int arrayLength, size_t offset)`
 
-`void changeIntervals(char *notesArray[], char tuningRoot[], int notesLength); - printIntervalsFunc.c`
+`int numericPositionRoot(char *root)`
 
-`int *ptrArrayOffset(int *srcArray[], int *targetArray[], int arrayLength, size_t offset);`
+`int convertNoteInt(char *noteArray[], char stringNote[], int arrayLength)`
+Converts a note to its integer value.  Takes string version of note as `stringNote[]` and returns the index within `*noteArray[]` if note is found.
+
+`char *convertNoteStr(char *noteArray[], int noteInt, int arrayLength)`
+Converts an integer representation of a note to its string representation.  Takes integer value as `noteInt`.  The integer value is the index of the note within `*notes[]`.  Returns the string representation of a note.
+
+`int calcNoteInt(char *noteArray[], int baseNote, int addNote, int arrayLength)`
+
+`char *calcNoteStr(char *noteArray[], char baseString[], char addString[], int arrayLength)`
+
+`char *calcNote(char *noteArray[], char baseString[], int addInt, int arrayLength)`
+Adds a number of positions as `addInt` to the note `baseString[]`.
+<br>`arrayLength`
+
+`int noteDifference(char tonic[], char compareNote[])`
+
+`char *determineInterval(char tonic[], char compareNote[])`
+
+`void strReplace(char str[], char replace[], int offset)`
+
+`void printStrings(char *noteArray[], char *tuning[], int notesLength, int tuningLength, int fretLength)`
+
+`void neckHeader(int fretLength)`
+
+`void printScaleString(char *notesArray[], char tuningRoot[], int *scale[], int scaleLength, int notesLength, int fretLength)`
+
+`void changeIntervals(char *notesArray[], char tuningRoot[], int notesLength)`
+
+`void drawFretboard(int stringNumber, int neckSize, char *tuning[])`
+
+

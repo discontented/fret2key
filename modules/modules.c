@@ -16,15 +16,9 @@ char *notes[] = {
 
 int notesLength = sizeof(notes) / sizeof(notes[0]);
 
-
-
 int modMath(int base)
 {
-  if (base >= notesLength)
-  {
-    base %= notesLength;
-  }
-  return base;
+  return (base %= notesLength);  
 }
 
 int *ptrArrayOffset(int *srcArray[], int *targetArray[], int arrayLength, size_t offset)

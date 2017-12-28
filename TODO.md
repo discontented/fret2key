@@ -8,7 +8,7 @@
 - [ ] User input for number of strings.
 - [ ] User defined tuning.
 - [ ] Generate chords based on position within scale.
+- [ ] Allow flats to be displayed depending on root of scale.
 
 - [x] Convert strings to variable length by a linked list.
 - [ ] Change references to original tuning array to linked list implementation.
-- [ ] Implement custom tuning.
