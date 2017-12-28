@@ -39,7 +39,7 @@ int main(void)
 
     for (i = 1; i <= stringLength; i++)
     {
-        printf("String %d:", i);
+        printf("String %d: ", i);
         scanf(" %s", &cursor->data);
 
         if (i != stringLength)

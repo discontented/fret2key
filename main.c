@@ -111,7 +111,7 @@ int main(void) {
     }
 
   while (strcmp(choice, "E") != 0 && strcmp(choice, "e") != 0) {
-      displayMenu(menuItems, menuLength);
+      displayMenu(menuItems, menuLength);ls
       prompt();
       if (strcmp(choice, "1") == 0) {
         printStrings(notes, tuning, notesLength, tuningLength, neckSize);
