@@ -42,7 +42,7 @@ Prompts for amount of frets on guitar and stores in `neckSize`
 
 `char *notes[]`
 
-String representations of notes program will use.  Notes are determined by position within this array and could be though of as the chromatic scale in C.  Index 0 of the array is 'C' and ends with index 11 as 'B'
+String representations of notes program will use.  Notes are determined by position within this array and could be thought of as the chromatic scale in C.  Index 0 of the array is 'C' and ends with index 11 as 'B'
 
 `int notesLength`
 
@@ -178,5 +178,4 @@ Creates all 7 heptatonic modes in pointer array based off of ionian mode.
 
 ## alpha -> modules -> modulesAlpha.h
 Contains all deployable modules.
-neckHeader - displays neck numbers based on fretLength.
 
