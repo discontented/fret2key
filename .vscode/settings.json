@@ -1,6 +1,7 @@
 {
     "C_Cpp.intelliSenseEngineFallback": "Enabled",
     "files.associations": {
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "tuning.h": "c"
     }
 }
