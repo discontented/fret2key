@@ -21,6 +21,7 @@ typedef struct linkedList node
 String linked list.
 
 `int stringLength`
+
 Number of strings of instrument stored.
 
 `void printList(node *head)`
