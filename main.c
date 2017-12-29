@@ -1,4 +1,7 @@
 #include "modules/modules.h"
+#include "modules/calcNote.h"
+#include "modules/printNote.h"
+#include "modules/noteConv.h"
 #include "modules/menu/menu.h"
 
 int main(void) {
@@ -111,7 +114,7 @@ int main(void) {
     }
 
   while (strcmp(choice, "E") != 0 && strcmp(choice, "e") != 0) {
-      displayMenu(menuItems, menuLength);ls
+      displayMenu(menuItems, menuLength);
       prompt();
       if (strcmp(choice, "1") == 0) {
         printStrings(notes, tuning, notesLength, tuningLength, neckSize);
