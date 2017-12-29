@@ -9,7 +9,38 @@ Contains all modules besides user-input.
 ## linkedList -> list.c
 Contains test code for custom tuning and variable string length.
 
+##linkedList -> tuning.c
+Contains methods for linked list version of tuning.
+
 # Functions and Variables
+## tuning
+```c
+struct linkedList
+typedef struct linkedList node
+```
+String linked list.
+
+`int stringLength`
+Number of strings of instrument stored.
+
+`void printList(node *head)`
+
+Iterates through linked list to display tuning of each string.  Head of linked list is bottom, or, usually, the high E string.
+
+`setTuning(node *head)`
+
+Prompts user to input the tuning of each string.
+
+`void stringPrompt()`
+
+Promps user to input number of strings.
+    
+    Postcondition: stringLength has been changed to the number of strings.
+
+`int getStringLen()`
+
+Returns the number of strings stored in `stringLen`.
+
 ## main
 `void changeIntervals(char *notesArray[], char tuningRoot[], int notesLength)`
 

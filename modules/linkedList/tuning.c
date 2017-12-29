@@ -15,14 +15,16 @@ void printList(node *head)
     }
 }
 
-void setTuning(node *head) {
+void setTuning(node *head)
+{
     int i = 1;
 
     node *cursor = malloc(sizeof(node));
 
     cursor = head;
 
-    for (i = 1; i <= stringLength; i++) {
+    for (i = 1; i <= stringLength; i++)
+    {
         printf("String %d: ", i);
         scanf("%s", &cursor->data);
 
