@@ -3,6 +3,12 @@
 ## menu -> menu.c
 Contains all menu options as well as function for display and input.
 
+## modules -> modules.c
+Contains all modules besides user-input.
+
+## linkedList -> list.c
+Contains test code for custom tuning and variable string length.
+
 # Functions and Variables
 ## main
 `void changeIntervals(char *notesArray[], char tuningRoot[], int notesLength)`
