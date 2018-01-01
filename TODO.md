@@ -11,12 +11,14 @@
 - [ ] Allow flats to be displayed depending on root of scale.
 
 - [x] Convert strings to variable length by a linked list.
-- [ ] Change references to original tuning array to linked list implementation.
+- [x] Change references to original tuning array to linked list implementation.
 - [ ] Remove irrelevant header files.
 
 ## string redesign
 
-- [ ] Replace any instance of tuningLength with function that iterates through tuning list to get length and returns and integer.
+- [ ] Replace any instance of `tuningLength` with `getStringLen()`
+- [ ] Replace any instance of `tuning` with implementation of a linked lit.
+    * Must refactor all relevant code as it is accessing an array by index.
 - [ ] refactor `printStrings`
 - [ ] refactor `printScaleString`
 

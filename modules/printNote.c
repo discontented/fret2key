@@ -15,14 +15,14 @@ void neckHeader(int fretLength)
     printf("\n");
 }
 
-void printStrings(char *noteArray[], char *tuningArray[], int notesLength, int tuningLength, int fretLength)
+void printStrings(char *noteArray[], char *tuningArray[], int notesLength, int getStringLen(), int fretLength)
 {
     size_t i;
     int currentFret;
 
     neckHeader(fretLength);
 
-    for (i = 0; i < tuningLength; i++)
+    for (i = 0; i < getStringLen(); i++)
     {
         printf("%s|", tuningArray[i]);
         currentFret = 1;
@@ -38,7 +38,7 @@ void printStrings(char *noteArray[], char *tuningArray[], int notesLength, int t
     }
 }
 
-void printScaleString(char *notesArray[], int notesLength, int *scale[], int scaleLength, char *tuning[], int tuningLength, int fretLength)
+void printScaleString(char *notesArray[], int notesLength, int *scale[], int scaleLength, char *tuning[], int getStringLen(), int fretLength)
 {
     //local variables
     size_t s;
@@ -48,7 +48,7 @@ void printScaleString(char *notesArray[], int notesLength, int *scale[], int sca
 
     neckHeader(fretLength);
 
-    for (s = 0; s < tuningLength; s++)
+    for (s = 0; s < getStringLen(); s++)
     {
         currentFret = 0;
 

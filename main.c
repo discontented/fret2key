@@ -117,7 +117,7 @@ int main(void) {
       displayMenu(menuItems, menuLength);
       prompt();
       if (strcmp(choice, "1") == 0) {
-        printStrings(notes, tuning, notesLength, tuningLength, neckSize);
+        printStrings(notes, tuning, notesLength, getStringLen(), neckSize);
       } else if (strcmp(choice, "2") == 0) {
         inputNeckSize();
       } else if (strcmp(choice, "3") == 0) {
@@ -130,25 +130,25 @@ int main(void) {
             prompt();
             if(strcmp(choice, "1") == 0) {
                 puts("Ionian:");
-                printScaleString(notes, notesLength, ionian, scaleLength, tuning, tuningLength, neckSize);
+                printScaleString(notes, notesLength, ionian, scaleLength, tuning, getStringLen(), neckSize);
             } else if(strcmp(choice, "2") == 0) {
                 puts("Dorian:");
-                printScaleString(notes, notesLength, dorian, scaleLength, tuning, tuningLength, neckSize);
+                printScaleString(notes, notesLength, dorian, scaleLength, tuning, getStringLen(), neckSize);
             } else if(strcmp(choice, "3") == 0) {
                 puts("Phrygian:");
-                printScaleString(notes, notesLength, phrygian, scaleLength, tuning, tuningLength, neckSize);
+                printScaleString(notes, notesLength, phrygian, scaleLength, tuning, getStringLen(), neckSize);
             } else if(strcmp(choice, "4") == 0) {
                 puts("Lydian:");
-                printScaleString(notes, notesLength, lydian, scaleLength, tuning, tuningLength, neckSize);
+                printScaleString(notes, notesLength, lydian, scaleLength, tuning, getStringLen(), neckSize);
             } else if(strcmp(choice, "5") == 0) {
                 puts("Mixolydian:");
-                printScaleString(notes, notesLength, mixolydian, scaleLength, tuning, tuningLength, neckSize);
+                printScaleString(notes, notesLength, mixolydian, scaleLength, tuning, getStringLen(), neckSize);
             } else if(strcmp(choice, "6") == 0) {
                 puts("Aeolian:");
-                printScaleString(notes, notesLength, aeolian, scaleLength, tuning, tuningLength, neckSize);
+                printScaleString(notes, notesLength, aeolian, scaleLength, tuning, getStringLen(), neckSize);
             } else if(strcmp(choice, "7") == 0) {
                 puts("Locrian:");
-                printScaleString(notes, notesLength, locrian, scaleLength, tuning, tuningLength, neckSize);
+                printScaleString(notes, notesLength, locrian, scaleLength, tuning, getStringLen(), neckSize);
             }
           }
         }
