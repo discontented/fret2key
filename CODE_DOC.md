@@ -4,12 +4,18 @@
 Contains all menu options as well as function for display and input.
 
 ## modules -> modules.c
-Contains all modules besides user-input.
+Random modules that doesn't fit elseware.
+
+## modules -> printNote.c
+All functions which print fretboard to screen.
+
+## modules -> noteConv.c
+All math-related functions to calculating a note and returning as integer or letter representation.
 
 ## linkedList -> list.c
 Contains test code for custom tuning and variable string length.
 
-##linkedList -> tuning.c
+## linkedList -> tuning.c
 Contains methods for linked list version of tuning.
 
 # Functions and Variables
@@ -43,11 +49,17 @@ Promps user to input number of strings.
 Returns the number of strings stored in `stringLen`.
 
 ## main
+`char currentKey[]`
+
+Stores current key which scales are generated from.  Defaults to E.
+
 `void changeIntervals(char *notesArray[], char tuningRoot[], int notesLength)`
 
 Changes all interval values based on the root `tuningRoot[]`.
 
-## menu
+## menu.c
+
+
 `char *menuItems[]`
 
 Menu options.
@@ -76,7 +88,7 @@ Stores user input into `choice[]`
 
 Prompts for amount of frets on guitar and stores in `neckSize`
 
-## modules
+## modules.c
 
 `char *notes[]`
 
@@ -86,23 +98,17 @@ String representations of notes program will use.  Notes are determined by posit
 
 Calculates total number of notes in notes[].  Set to 12 for 12-TET system.
 
-`char *tuning[]`
-
-Array containing notes for the tuning of the guitar.
-
-`int tuningLength`
-
-Number of strings.
-
 `int modMath(int base)`
 
 Checks that the integer representing a note is less than or equal to notesLength, or the number of notes within the default chromatic scale.
 
 `int *ptrArrayOffset(int *srcArray[], int *targetArray[], int arrayLength, size_t offset)`
 
-`int numericPositionNote(char *note)`
+`void strReplace(char str[], char replace[], int offset)`
 
-Returns integer value of a note.
+Replaces a string with another but does not affect the length of the original string.  `offset` can be used for formatting of where the new string will begin.  Used for placing notes on blank frets.
+
+## noteConv.c
 
 `int convertNoteInt(char *noteArray[], char stringNote[], int arrayLength)`
 
@@ -112,6 +118,12 @@ Converts a note to its integer value.  Takes string version of note as `stringNo
 
 Converts an integer representation of a note to its string representation.  Takes integer value as `noteInt`.  The integer value is the index of the note within `*noteArray[]`.  Returns the string representation of a note.
 
+## calcNote.c
+
+`int numericPositionNote(char *note)`
+
+Returns integer value of a note.
+
 `int calcNoteInt(char *noteArray[], int baseNote, int addNote, int arrayLength)`
 
 `char *calcNoteStr(char *noteArray[], char baseString[], char addString[], int arrayLength)`
@@ -120,9 +132,7 @@ Converts an integer representation of a note to its string representation.  Take
 
 Adds a number of positions as `addInt` to the note `baseString[]`.  Returns the string representation of the new note. `arrayLength` is the length of the `*noteArray[]`.
 
-`void strReplace(char str[], char replace[], int offset)`
-
-Replaces a string with another but does not affect the length of the original string.  `offset` can be used for formatting of where the new string will begin.  Used for placing notes on blank frets.
+## printNote.c
 
 `void printStrings(char *noteArray[], char *tuning[], int notesLength, int tuningLength, int fretLength)`
 
@@ -133,11 +143,19 @@ Prints all notes of frets based on the tuning and number of frets.
 
 Prints all notes on frets based on scale, tuning, and number of frets.
 
-
-
 `void neckHeader(int fretLength)`
 
 Prints the fret numbers.
+
+## deprecated
+
+`char *tuning[]`
+
+Array containing notes for the tuning of the guitar.
+
+`int tuningLength`
+
+Number of strings.
 
 # Old Code
 The ideas behind this code needs to be updated and implemented into the existing functional version.  The code is stored for reference.

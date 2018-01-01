@@ -13,3 +13,15 @@
 - [x] Convert strings to variable length by a linked list.
 - [ ] Change references to original tuning array to linked list implementation.
 - [ ] Remove irrelevant header files.
+
+## string redesign
+
+- [ ] Replace any instance of tuningLength with function that iterates through tuning list to get length and returns and integer.
+- [ ] refactor `printStrings`
+- [ ] refactor `printScaleString`
+
+
+## github pages site
+
+- [ ] Proofread report and update.
+- [ ] Convert report to a site design.

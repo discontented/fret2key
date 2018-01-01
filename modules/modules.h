@@ -10,4 +10,3 @@ int modMath(int base);
 int *ptrArrayOffset(int *srcArray[], int *targetArray[], int arrayLength, size_t offset);
 
 void strReplace(char str[], char replace[], int offset);
-
